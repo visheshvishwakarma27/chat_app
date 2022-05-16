@@ -16,9 +16,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'chathome' %}">chats</a>
-            </li>
+            
         </ul>
         <ul class="navbar-nav  mb-2 mb-lg-0">
              {% if request.user.is_authenticated %} 
@@ -35,7 +33,7 @@
                   </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                <a class="nav-link" href="{% url 'Logout' %}">Logout</a>
             </li>
             {% else %}
             <li class="nav-item">

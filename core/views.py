@@ -3,7 +3,7 @@ from django.views.generic import View
 from .form import *
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
-
+from chats import views as chat_views
 
 # Create your views here.
 def home(request):
@@ -58,4 +58,4 @@ def contact(request):
 
 
 def chats(request):
-    return render(request,'chat/templates/home.html')
+    return render(request,'chats/home.html')
