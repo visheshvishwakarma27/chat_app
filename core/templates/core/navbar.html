@@ -25,9 +25,10 @@
                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         {{request.user}}
                     </a>
-                  
+                    
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <li><a class="dropdown-item" href="{% url 'change_password' %}">Change Password</a></li>
+                      <li><a class="dropdown-item" href="{% url 'chat-home' %}">lets chat</a></li>
                       
                     </ul>
                   </div>
