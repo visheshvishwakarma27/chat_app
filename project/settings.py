@@ -12,13 +12,14 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 from pickle import TRUE
-
+import environ
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR,'.env'))
 
 
 # Quick-start development settings - unsuitable for production
@@ -30,7 +31,7 @@ SECRET_KEY = 'django-insecure-j8_#9nc#lcqod4c4&up*5e%r*tlo1kgr(i#0rtkbf9z8wl+$6l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*","localhost","visheshchatapplication.herokuapp.com"]
+ALLOWED_HOSTS = ["*","localhost","git.heroku.com/visheshchatapplication.git"]
 
 
 
@@ -94,10 +95,10 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd6u8vl95bfr83s',
-        'USER': 'nttmkwsrivuwnz',
-        'PASSWORD': 'eb67379309e1f705f311cfddba2f72c4447aefaeb320f2a4df95e02dd7ada32c',
-        'HOST': 'ec2-3-218-171-44.compute-1.amazonaws.com',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
         'PORT': 5432,
     }
 }
